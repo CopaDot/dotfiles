@@ -140,6 +140,51 @@ export NVM_DIR="$HOME/.nvm"
 
 ######## Bash Alias ########
 
-alias ls="exa -la"
+# ls to exa
+alias ls="exa -la --color=always --group-directories-first"
+alias la="exa -a --color=always --group-directories-first"
+alias ll="exa -l --color=always --group-directories-first"
+alias lt="exa -aT --color=always --group-directories-first"
+alias l.='exa -a | egrep "^\."'
+
+# navigation
 alias ..="cd .."
+alias ...='cd ../..' 
+alias .3='cd ../../..' 
+alias .4='cd ../../../..' 
+alias .5='cd ../../../../..'
+
+# bare git directory shortcut alias
 alias config='/usr/bin/git --git-dir=/home/copa/dotfiles/ --work-tree=/home/copa'
+
+# grep colorize
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+
+# flags
+alias df="df -h"		# human readable sizes
+alias free="free -m"		# show sizes in MB
+
+# youtube-dl audio
+alias yta-aac="youtube-dl --extract-audio --audio-format aac " 
+alias yta-best="youtube-dl --extract-audio --audio-format best " 
+alias yta-flac="youtube-dl --extract-audio --audio-format flac " 
+alias yta-m4a="youtube-dl --extract-audio --audio-format m4a " 
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 " 
+alias yta-opus="youtube-dl --extract-audio --audio-format opus " 
+alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis " 
+alias yta-wav="youtube-dl --extract-audio --audio-format wav " 
+alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+
+# Rickest Roll
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+
+# termbin
+alias tb="nc termbin.com 9999"
+
+### Bash Insulter ###
+if [ -f /etc/bash.command-not-found ]; then
+	. /etc/bas.command-not-found
+fi
+
